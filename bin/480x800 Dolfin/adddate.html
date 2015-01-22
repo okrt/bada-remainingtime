@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RemainingTime</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="js/settings.js"></script>
+</head>
+
+<body>
+<div id="main"><h2>Add a date to countback to</h2>
+<p><a href="javascript:window.location='addremove.html'">&lt;-- Back</a></p>
+<form id="addEventForm" name="addEventForm" method="post" action="">
+  <p>Please enter date to countback to:
+  </p>
+  <p>Give a name to this event:<br />
+    <label for="name"></label>
+    <input name="name" type="text" id="name" size="30" maxlength="30" />
+  </p>
+  <p>
+    <label for="day"></label>
+    <input name="day" type="text" id="day" size="5" maxlength="2" />
+  / 
+  <label for="month"></label>
+  <input name="month" type="text" id="month" size="5" maxlength="2" />
+  / 
+  <label for="year"></label>
+  <input name="year" type="text" id="year" size="6" maxlength="4" />
+  <label for="hour"></label>
+  <input name="hour" type="text" id="hour" size="5" maxlength="2" />
+  : 
+  <label for="minute"></label>
+  <input name="minute" type="text" id="minute" size="5" maxlength="2" />
+  <br />
+  (Day/Month/Year Hour:Minute)
+  </p>
+  <p>
+    <input type="submit" name="add" id="add" value="Add Timer" onclick="addTimer();" />
+  </p>
+  <p>&nbsp;</p>
+</form>
+<p>&nbsp;</p>
+<div>
+</body>
+</html>

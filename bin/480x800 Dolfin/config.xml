@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widget xmlns="http://www.w3.org/ns/widgets" height="500" id="0x10001f78" version="2.0" width="450">
+    <title>RemainingTime</title>
+    <description/>
+    <icon src="icon.png"/>
+    <content src="index.html"/>
+    <access network="true"/>
+    <author email="oguz@oguzkirat.com" href="http://www.oguzkirat.com">Oguz Kirat</author>
+    <license>The widget is distributed "as is". There is no warranty at all.</license>
+</widget>

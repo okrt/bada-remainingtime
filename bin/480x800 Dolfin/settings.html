@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RemainingTime</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="js/settings.js"></script>
+</head>
+
+<body>
+Settings
+<p><a href="javascript:window.location='index.html'">&lt;-- Back</a></p>
+<form id="settingsForm" name="settingsForm" method="post" action="">
+  <p>Select the time units you want to see:<br />
+    <input name="Months" type="checkbox" id="Months" value="yes" />
+    Months<br />
+    <input name="Days" type="checkbox" id="Days" value="yes" />
+    Days
+    <br />
+    <input name="Hours" type="checkbox" id="Hours" value="yes" />
+    Hours<br />
+    <input name="Mins" type="checkbox" id="Mins" value="yes" />
+    Minutes
+    <br />
+    <input name="Secs" type="checkbox" id="Secs" value="yes" />
+    Seconds
+  </p>
+  <p>
+    <input type="button" name="save" id="save" value="Save" onclick="saveSettings();" />
+  </p>
+</form>
+<script language="javascript">	showmonths=widget.preferenceForKey("showmonths");showdays=widget.preferenceForKey("showdays");showhours=widget.preferenceForKey("showhours");showmins=widget.preferenceForKey("showmins");showsecs=widget.preferenceForKey("showsecs");if (showmonths==1){document.settingsForm.Months.checked=true;}if(showdays==1){document.settingsForm.Days.checked=true;}if (showhours==1){	document.settingsForm.Hours.checked=true;}if (showmins==1){document.settingsForm.Mins.checked=true;}if (showsecs==1){document.settingsForm.Secs.checked=true;}
+    </script>
+<p>&nbsp;</p>
+<div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widget xmlns="http://samsung.widgetsdk.uievolution.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="RemainingTime" xsi:schemaLocation="http://samsung.widgetsdk.uievolution.com http://samsung.widgetsdk.uievolution.com/projectConfig.xsd">
+    <description/>
+    <version>2.0</version>
+    <width>450</width>
+    <height>500</height>
+    <icon>icon.png</icon>
+    <main>index.html</main>
+    <network>true</network>
+    <defaultMode>fullscreen</defaultMode>
+    <author email="oguz@oguzkirat.com" href="http://www.oguzkirat.com">Oguz Kirat</author>
+    <license>The widget is distributed "as is". There is no warranty at all.</license>
+</widget>

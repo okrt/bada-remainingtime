@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>RemainingTime</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<div id="main"> 
+  <div style="background-color:#09F"><h3>RemainingTime</h3></div>
+  <div id="counters"></div>
+  <p></p>
+  <div id="controls"><a href="javascript:window.location='addremove.html'"><img src="images/plus.jpg" width="50" height="50" alt="Add"></a><a href="javascript:window.location='settings.html'"><img src="images/settings.jpg" width="50" height="50" alt="Settings"></a><a href="javascript:window.location='info.html'"><img src="images/info.jpg" width="50" height="50" alt="Info"></a><a href="javascript:window.location='help.html'"><img src="images/help.jpg" width="50" height="50" alt="help"></a></div>
+</div>
+<script src="js/language.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+premyevents = widget.preferenceForKey("myevents");
+something=widget.preferenceForKey("something");
+if (premyevents == something) {
+	myevents = new Array;
+	mydates = new Array;
+	widget.setPreferenceForKey(1, "showmonths");
+	widget.setPreferenceForKey(1, "showdays");
+	widget.setPreferenceForKey(1, "showhours");
+	widget.setPreferenceForKey(1, "showmins");
+	widget.setPreferenceForKey(0, "showsecs");
+	showmonths=1;
+	showdays=1;
+	showhours=1;
+	showmins=1;
+	showsecs=0;
+}
+else
+{
+myevents=widget.preferenceForKey("myevents").split(',');
+mydates=widget.preferenceForKey("mydates").split(',');
+if(myevents.indexOf('noevent')!=-1)
+{
+
+myevents.splice(myevents.indexOf('noevent'),1);
+mydates.splice(mydates.indexOf('noevent'),1);
+alert("Var");
+}
+
+showmonths=widget.preferenceForKey("showmonths");
+showdays=widget.preferenceForKey("showdays");
+showhours=widget.preferenceForKey("showhours");
+showmins=widget.preferenceForKey("showmins");
+showsecs=widget.preferenceForKey("showsecs");
+}
+counterhtml="";
+function refreshTime(){
+now  = new Date();
+if (showsecs==1){
+r=1000;
+}	
+else if (showmins==1)
+{
+r=(60-now.getSeconds())*1000;
+}
+else
+{
+r=10*60*1000;
+}
+return r;
+}
+
+function echoCounter(ndate, index){
+today  = new Date();
+target = new Date(ndate); 
+difference= new Date(target-today);
+eventname=myevents[index];
+counterhtml=counterhtml+"<b>"+eventname+"</b><br />"
+if (difference>0)
+{
+riff=difference/1000;
+if (showmonths==1)
+{
+monthsLeft=riff/(60*60*24*30);
+dispMonths=Math.floor(monthsLeft);	
+counterhtml=counterhtml+dispMonths+" "+l_months+" ";
+riff=riff-(dispMonths*(60*60*24*30));
+}
+
+if (showdays==1)
+{
+daysLeft=riff/(60*60*24)
+dispDays=Math.floor(daysLeft);
+counterhtml=counterhtml+dispDays+" "+l_days+" ";
+riff=riff-(dispDays*(60*60*24));
+}
+
+if (showhours==1)
+{
+	hoursLeft=riff/(60*60);
+
+dispHours=Math.floor(hoursLeft);
+counterhtml=counterhtml+dispHours+" "+l_hours+" ";
+riff=riff-(dispHours*(60*60));
+}
+
+
+if (showmins==1)
+{
+minsLeft=riff/60;
+dispMins=Math.floor(minsLeft);
+counterhtml=counterhtml+dispMins+" "+l_mins+" ";
+riff=riff-(dispMins*60);
+}
+
+
+if (showsecs==1){
+secsLeft=riff;
+dispSecs=Math.floor(secsLeft);	
+counterhtml=counterhtml+dispSecs+" "+l_secs+" ";
+	}
+
+counterhtml=counterhtml+"<br />";
+
+}
+else
+{
+counterhtml=counterhtml+"Sure doldu"+"<br />";
+}
+};
+function showCounters()
+{
+
+mydates.forEach(echoCounter);
+document.getElementById("counters").innerHTML=counterhtml;
+counterhtml="";
+setTimeout("showCounters();", refreshTime());
+};
+showCounters();
+
+
+</script>
+</body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RemainingTime</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="js/settings.js"></script>
+</head>
+
+<body>
+<div id="main"><h2>Add a date to countback to</h2>
+<p><a href="javascript:window.location='addremove.html'">&lt;-- Back</a></p>
+<form id="addEventForm" name="addEventForm" method="post" action="">
+  <p>Give a name to this event:<br />
+    <label for="name"></label>
+    <input name="name" type="text" id="name" size="30" maxlength="30" />
+  </p>
+  <p>
+    <label for="day"></label>
+  Please enter timespan to countback:</p>
+  <table width="100%" border="1">
+    <tr>
+      <td width="33%"><input name="day" type="text" id="day" value="0" size="5" maxlength="2" />
+      <br />
+      days</td>
+      <td width="33%"><input name="hour" type="text" id="hour" value="0" size="5" maxlength="2" />
+        <br />
+      hours</td>
+      <td width="34%"><input name="minute" type="text" id="minute" value="0" size="5" maxlength="2" />
+        <br />
+minutes</td>
+    </tr>
+  </table>
+  <p>
+    <label for="minute"></label>
+    <br />
+  </p>
+  <p>
+    <input type="submit" name="add" id="add" value="Add Timer" onclick="addTimeSpan();" />
+  </p>
+  <p>&nbsp;</p>
+</form>
+<p>&nbsp;</p>
+<div>
+</body>
+</html>

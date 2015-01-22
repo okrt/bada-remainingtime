@@ -8,36 +8,43 @@
 </head>
 
 <body>
-<div id="main"><h2>Add a date to countback to</h2>
+<div id="main">
+<h2>Add a date to countdown</h2>
 <p><a href="javascript:window.location='addremove.html'">&lt;-- Back</a></p>
 <form id="addEventForm" name="addEventForm" method="post" action="">
-  <p>Please enter date to countback to:
-  </p>
   <p>Give a name to this event:<br />
     <label for="name"></label>
     <input name="name" type="text" id="name" size="30" maxlength="30" />
   </p>
+  <p>Please enter date to countdown: </p>
+  <table width="21%">
+    <tr>
+      <td width="34%"><input name="day" type="text" id="day" size="5" maxlength="2" /></td>
+      <td width="27%"><input name="month" type="text" id="month" size="5" maxlength="2" /></td>
+      <td width="39%"><input name="year" type="text" id="year" size="6" maxlength="4" /></td>
+    </tr>
+    <tr>
+      <td>Day</td>
+      <td>Month</td>
+      <td>Year</td>
+    </tr>
+    <tr>
+      <td><input name="hour" type="text" id="hour" size="5" maxlength="2" /></td>
+      <td><input name="minute" type="text" id="minute" size="5" maxlength="2" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Hour</td>
+      <td>Minute</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
   <p>
     <label for="day"></label>
-    <input name="day" type="text" id="day" size="5" maxlength="2" />
-  / 
-  <label for="month"></label>
-  <input name="month" type="text" id="month" size="5" maxlength="2" />
-  / 
-  <label for="year"></label>
-  <input name="year" type="text" id="year" size="6" maxlength="4" />
-  <label for="hour"></label>
-  <input name="hour" type="text" id="hour" size="5" maxlength="2" />
-  : 
-  <label for="minute"></label>
-  <input name="minute" type="text" id="minute" size="5" maxlength="2" />
-  <br />
-  (Day/Month/Year Hour:Minute)
-  </p>
-  <p>
     <input type="submit" name="add" id="add" value="Add Timer" onclick="addTimer();" />
   </p>
-  <p>&nbsp;</p>
+<p>&nbsp;</p>
 </form>
 <p>&nbsp;</p>
 <div>

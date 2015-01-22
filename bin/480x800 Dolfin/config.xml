@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<widget xmlns="http://www.w3.org/ns/widgets" height="500" id="0x10001f78" version="2.0" width="450">
+<widget xmlns="http://www.w3.org/ns/widgets" height="500" id="0x10001f78" version="1.0" width="450">
     <title>RemainingTime</title>
     <description/>
     <icon src="icon.png"/>

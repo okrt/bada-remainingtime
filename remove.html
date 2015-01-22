@@ -5,10 +5,12 @@
 <title>RemainingTime</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <script language="javascript" src="js/settings.js"></script>
+
 </head>
 
 <body>
-Remove a Timer
+<div id="main">
+<h2>Remove a Timer</h2>
 <p><a href="javascript:window.location='addremove.html'">&lt;-- Back</a></p>
 <form name="deleteEventForm" action="#">
 	<select name="eventremovedrop" id="eventremovedrop">
@@ -16,9 +18,9 @@ Remove a Timer
 		createMyEventsDropdown();
 	</script>
 	</select>
-	<input type="button" name="ekle" id="bigButton" value="Kaldır" onclick="deleteAnEvent()" />
+	<input type="button" name="ekle" id="bigButton" value="Remove" onclick="deleteAnEvent()" />
 </form>
 <p>&nbsp;</p>
-<div>
+</div>
 </body>
 </html>

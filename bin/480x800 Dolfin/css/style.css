@@ -1,9 +1,9 @@
 @charset "utf-8";
 #main {
 	font-family: Verdana, Geneva, sans-serif;
-	font-size: 10pt;
+	font-size: 15pt;
 	background-color: #FFF;
-	border-radius:20px;
+	border-radius:10px;
 	padding-right:10px;
 	padding-left:10px;
 	width:90%;

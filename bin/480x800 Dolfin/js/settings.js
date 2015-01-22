@@ -59,7 +59,22 @@ function createMyEventsDropdown() {
 	else
 	myevents.forEach(dropDownItemWriterForDeleting);
 	}
+function getYear(d) { 
+ return (d < 1000) ? d + 1900 : d;
+ }
 
+function isDate (year, month, day, hour,minute) {
+ // month argument must be in the range 1 - 12
+ month = month - 1; // javascript month range : 0- 11
+ var tempDate = new Date(year,month,day);
+ if ( (getYear(tempDate.getYear()) == year) &&
+ (month == tempDate.getMonth()) &&
+ (day == tempDate.getDate()) && (hour<24) && (minute<60))
+ 
+ return true;
+ else
+ return false
+ }
 function IsNumeric(sText)
 
 {
@@ -84,7 +99,7 @@ function IsNumeric(sText)
 function saveSettings(){
 	if (document.settingsForm.Months.checked==true || document.settingsForm.Days.checked==true || document.settingsForm.Hours.checked==true || document.settingsForm.Mins.checked==true || document.settingsForm.Secs.checked==true)
 	{
-	if(document.settingsForm.Months.checked==true){	widget.setPreferenceForKey(1, "showmonths");}else{widget.setPreferenceForKey(0, "showmonths");	}if(document.settingsForm.Days.checked==true){widget.setPreferenceForKey(1, "showdays");}else{widget.setPreferenceForKey(0, "showdays");}if(document.settingsForm.Hours.checked==true){widget.setPreferenceForKey(1, "showhours");}else{widget.setPreferenceForKey(0, "showhours");}if(document.settingsForm.Mins.checked==true){widget.setPreferenceForKey(1, "showmins");}else{widget.setPreferenceForKey(0, "showmins");}if(document.settingsForm.Secs.checked==true){widget.setPreferenceForKey(1, "showsecs");}else{widget.setPreferenceForKey(0, "showsecs");}
+	if(document.settingsForm.Months.checked==true){	widget.setPreferenceForKey(1, "showmonths");}else{widget.setPreferenceForKey(0, "showmonths");}if(document.settingsForm.Days.checked==true){widget.setPreferenceForKey(1, "showdays");}else{widget.setPreferenceForKey(0, "showdays");}if(document.settingsForm.Hours.checked==true){widget.setPreferenceForKey(1, "showhours");}else{widget.setPreferenceForKey(0, "showhours");}if(document.settingsForm.Mins.checked==true){widget.setPreferenceForKey(1, "showmins");}else{widget.setPreferenceForKey(0, "showmins");}if(document.settingsForm.Secs.checked==true){widget.setPreferenceForKey(1, "showsecs");}else{widget.setPreferenceForKey(0, "showsecs");}
 	alert("Settings has been saved.");
 	}
 	else
@@ -103,8 +118,10 @@ alert("You didn't enter an event name.");
 }
 else
 {
+	if(isDate(document.addEventForm.year.value,document.addEventForm.month.value,document.addEventForm.day.value, document.addEventForm.hour.value , +document.addEventForm.minute.value))
+	{
 eventdate=document.addEventForm.month.value+"/"+document.addEventForm.day.value+"/"+document.addEventForm.year.value+" "+document.addEventForm.hour.value+":"+document.addEventForm.minute.value;document.addEventForm.year.value+" "+document.addEventForm.hour.value+":"+document.addEventForm.minute.value;
-//Tarih ve ismi kontrol et
+
 	if (myevents.length>4)
 	{
 	alert("You can add up to 5 counters.");
@@ -113,7 +130,13 @@ eventdate=document.addEventForm.month.value+"/"+document.addEventForm.day.value+
 	{
 	myevents[myevents.length] = eventname;
 	mydates[mydates.length] = eventdate;
-	saveChanges();	
+	saveChanges();
+	alert("Timer added");	
+	}
+	}
+	else
+	{
+	alert("Data is not valid.");
 	}
 }
 }
@@ -136,7 +159,7 @@ if (IsNumeric(dayv) && IsNumeric(hourv) && IsNumeric(minutev))
 tdate=parseInt(dayv)*24*60*60*1000+parseInt(hourv)*60*60*1000+parseInt(minutev)*60*1000;
 today  = new Date();
 tevent=new Date(today.getTime()+tdate);
-eventdate=tevent.getMonth()+1+"/"+tevent.getDate()+"/"+tevent.getFullYear()+" "+tevent.getHours()+":"+tevent.getMinutes();
+eventdate=tevent.getMonth()+1+"/"+tevent.getDate()+"/"+tevent.getFullYear()+" "+tevent.getHours()+":"+tevent.getMinutes()+":"+tevent.getSeconds();
 
 //Tarihi kontrol et
 	if (myevents.length>4)
